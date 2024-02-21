@@ -21,6 +21,11 @@ export default function MovieList() {
 
     return (
         <div className="movie-container">
+            <input
+                type="text"
+                className="search-input"
+                placeholder="Search for movies..."
+            />
             <div className="movie-list">
                 {movies.map(movie => (
                     <div key={movie.id} className="movie-item">
