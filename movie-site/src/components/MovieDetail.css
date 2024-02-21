@@ -1,6 +1,73 @@
-.detail {
+.detail-container {
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5em;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.detail-cover {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 20px;
     border-radius: 4px;
-    margin-top: 15px;
+}
+
+.detail-header-info {
+    flex-grow: 1;
+}
+
+.detail-title {
+    margin-top: 0;
+}
+
+.detail-release-year,
+.detail-director,
+.detail-rating {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.detail-body {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.detail-description {
+    margin-bottom: 20px;
+}
+
+.detail-genres {
+    font-style: italic;
+    color: #666;
+}
+
+.detail-actors {
+    margin-top: 20px;
+}
+
+.detail-actors ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-actors li {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #333;
 }

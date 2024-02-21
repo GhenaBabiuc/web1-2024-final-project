@@ -20,16 +20,33 @@ export default function MovieDetail() {
         fetchMovie();
     }, [id]);
 
-    if (!movie) return <div>Loading...</div>;
+    if (!movie) return <div className="loading">Loading...</div>;
 
     return (
-        <div className="detail">
-            <h1>{movie.title}</h1>
-            <h1>{movie.releaseDate}</h1>
-            <h1>{movie.director}</h1>
-            <h1>{movie.rating}</h1>
-            <h1>{movie.description}</h1>
-            <h1>{movie.genre}</h1>
+        <div className="detail-container">
+            <div className="detail-header">
+                <img src={movie.coverUrl} alt={movie.title} className="detail-cover"/>
+                <div className="detail-header-info">
+                    <h2 className="detail-title">{movie.title}</h2>
+                    <p className="detail-release-year">Release Year: {new Date(movie.releaseDate).getFullYear()}</p>
+                    <p className="detail-director">Directed by {movie.director}</p>
+                    <p className="detail-rating">Rating: {movie.rating}</p>
+                    <div className="detail-genres">
+                        <strong>Genres:</strong> {movie.genres.map((genre) => genre.name).join(', ')}
+                    </div>
+                </div>
+            </div>
+            <div className="detail-body">
+                <p className="detail-description">{movie.description}</p>
+                <div className="detail-actors">
+                    <strong>Actors:</strong>
+                    <ul>
+                        {movie.actors.map((actor) => (
+                            <li key={actor.id}>{actor.fullName}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
-};
+}

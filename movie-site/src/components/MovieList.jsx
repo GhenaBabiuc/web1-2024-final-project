@@ -20,17 +20,20 @@ export default function MovieList() {
     }, []);
 
     return (
-        <div className="container">
-            <h1 className="title">Movies</h1>
-            <ul className="list">
+        <div className="movie-container">
+            <div className="movie-list">
                 {movies.map(movie => (
-                    <li key={movie.id} className="listItem">
-                        <Link to={`/movies/${movie.id}`} className="listLink">
-                            {movie.title}
+                    <div key={movie.id} className="movie-item">
+                        <Link to={`/movies/${movie.id}`} className="movie-link">
+                            <img src={movie.coverUrl} alt={movie.title} className="movie-cover"/>
+                            <div className="movie-info">
+                                <h2>{movie.title}</h2>
+                                <p>{new Date(movie.releaseDate).getFullYear()}</p>
+                            </div>
                         </Link>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
-};
+}
