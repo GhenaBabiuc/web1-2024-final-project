@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import './MovieList.css';
+import './MovieListPage.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import MovieItem from "../MovieItem";
 
-export default function MovieList() {
+export default function MovieListPage() {
     const [movies, setMovies] = useState([]);
-    const [filmSearch, setFilmSearch] = useState("");
+    const [filmSearch, setFilmSearch] = useState('');
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -28,6 +28,8 @@ export default function MovieList() {
         setFilmSearch(event.target.value);
     }
 
+    if (!movies) return <div className="loading">Loading...</div>;
+
     return (
         <div className="movie-container">
             <input
@@ -38,17 +40,7 @@ export default function MovieList() {
             />
 
             <div className="movie-list">
-                {movies.map(movie => (
-                    <div key={movie.id} className="movie-item">
-                        <Link to={`/movies/${movie.id}`} className="movie-link">
-                            <img src={movie.coverUrl} alt={movie.title} className="movie-cover"/>
-                            <div className="movie-info">
-                                <h2>{movie.title}</h2>
-                                <p>{new Date(movie.releaseDate).getFullYear()}</p>
-                            </div>
-                        </Link>
-                    </div>
-                ))}
+                {movies.map(movie => MovieItem(movie))}
             </div>
         </div>
     );

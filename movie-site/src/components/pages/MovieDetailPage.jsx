@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import './MovieDetail.css';
+import './MovieDetailPage.css';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
 
-export default function MovieDetail() {
+export default function MovieDetailPage() {
     const [movie, setMovie] = useState(null);
     const {id} = useParams();
 

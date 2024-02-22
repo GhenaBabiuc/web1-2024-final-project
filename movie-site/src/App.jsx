@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
-import MovieList from './components/MovieList';
-import MovieDetail from './components/MovieDetail';
+import HomePage from './components/pages/HomePage';
+import MovieListPage from './components/pages/MovieListPage';
+import MovieDetailPage from './components/pages/MovieDetailPage';
 
 export default function App() {
     return (
@@ -11,8 +11,8 @@ export default function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
-                <Route path="/movies" element={<MovieList/>}/>
-                <Route path="/movies/:id" element={<MovieDetail/>}/>
+                <Route path="/movies" element={<MovieListPage/>}/>
+                <Route path="/movies/:id" element={<MovieDetailPage/>}/>
             </Routes>
         </Router>
     );

@@ -1,12 +1,11 @@
 .navbar {
     padding: 10px 20px;
-    background: #333;
-    color: #fff;
+    background: rgb(51, 51, 51);
     text-align: center;
 }
 
 .navLink {
-    color: #fff;
+    color: #bebbbb;
     text-decoration: none;
     margin: 0 10px;
 }
