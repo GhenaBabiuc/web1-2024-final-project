@@ -5,11 +5,16 @@ import {Link} from 'react-router-dom';
 
 export default function MovieList() {
     const [movies, setMovies] = useState([]);
+    const [filmSearch, setFilmSearch] = useState("");
 
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/films/all');
+                const response = await axios.get('http://localhost:8080/films/all', {
+                    params: {
+                        title: filmSearch
+                    }
+                });
                 setMovies(response.data);
             } catch (error) {
                 console.error('There was an error fetching the movies', error);
@@ -17,15 +22,21 @@ export default function MovieList() {
         };
 
         fetchMovies();
-    }, []);
+    }, [filmSearch]);
+
+    const handleInputChange = (event) => {
+        setFilmSearch(event.target.value);
+    }
 
     return (
         <div className="movie-container">
             <input
                 type="text"
                 className="search-input"
-                placeholder="Search for movies..."
+                placeholder="Search movies for title"
+                onInput={(event) => handleInputChange(event)}
             />
+
             <div className="movie-list">
                 {movies.map(movie => (
                     <div key={movie.id} className="movie-item">
