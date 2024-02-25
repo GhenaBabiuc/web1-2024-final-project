@@ -29,24 +29,43 @@ export default function MovieDetailPage() {
                 <div className="detail-header-info">
                     <h2 className="detail-title">{movie.title}</h2>
                     <p className="detail-release-year">Release Year: {new Date(movie.releaseDate).getFullYear()}</p>
-                    <p className="detail-director">Directed by {movie.director}</p>
+                    <div className="detail-directors">
+                        <strong>Directors:</strong>
+                        {movie.directors.map((director) => (
+                            <span key={director.id}> {director.name}</span>
+                        ))}
+                    </div>
                     <p className="detail-rating">Rating: {movie.rating}</p>
                     <div className="detail-genres">
                         <strong>Genres:</strong> {movie.genres.map((genre) => genre.name).join(', ')}
+                    </div>
+                    <div className="detail-actors">
+                        <strong>Actors:</strong>
+                        <ul>
+                            {movie.actors.map((actor) => (
+                                <li key={actor.id}>{actor.name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="detail-writers">
+                        <strong>Writers:</strong>
+                        {movie.writers.map((writer) => (
+                            <span key={writer.id}> {writer.name}</span>
+                        ))}
                     </div>
                 </div>
             </div>
             <div className="detail-body">
                 <p className="detail-description">{movie.description}</p>
-                <div className="detail-actors">
-                    <strong>Actors:</strong>
-                    <ul>
-                        {movie.actors.map((actor) => (
-                            <li key={actor.id}>{actor.fullName}</li>
-                        ))}
-                    </ul>
-                </div>
             </div>
+            <iframe
+                src={movie.trailerEmbedLink}
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="Trailer"
+                className="detail-trailer-iframe"
+            />
         </div>
     );
 }
