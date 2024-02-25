@@ -28,8 +28,6 @@ export default function MovieListPage() {
         setFilmSearch(event.target.value);
     }
 
-    if (!movies) return <div className="loading">Loading...</div>;
-
     return (
         <div className="movie-container">
             <input
@@ -39,9 +37,13 @@ export default function MovieListPage() {
                 onInput={(event) => handleInputChange(event)}
             />
 
-            <div className="movie-list">
-                {movies.map(movie => MovieItem(movie))}
-            </div>
+            {movies.length === 0 ? (
+                <div className="loading">Loading...</div>
+            ) : (
+                <div className="movie-list">
+                    {movies.map(movie => MovieItem(movie))}
+                </div>
+            )}
         </div>
     );
 }
