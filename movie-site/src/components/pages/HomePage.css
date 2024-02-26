@@ -3,7 +3,7 @@ body {
     background-color: black;
 }
 
-.video-background {
+.home-page-video-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,35 +13,38 @@ body {
     z-index: -1;
 }
 
-.video-background video {
+.home-page-video-background video {
     width: 100%;
     height: 100%;
 }
 
-.home-page {
+.home-page-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding-top: 60px;
+    padding: 20px;
+    max-width: 75%;
+    margin: 0 auto;
+    min-height: 60em;
+}
+
+.home-page-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.home-page-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .content {
+    margin: 20px;
     padding: 30px;
     background-color: rgb(51, 51, 51, 0.8);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #bebbbb;
-}
-
-.home-page h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.home-page p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
 }
 
 .explore-btn {

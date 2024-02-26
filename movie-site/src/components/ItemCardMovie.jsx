@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
 import React from "react";
-import './MovieItem.css';
+import './ItemCardMovie.css';
 
-export default function MovieItem(movie) {
+export default function ItemCardMovie(movie) {
     const defaultCoverUrl = "https://klike.net/uploads/posts/2022-09/1663762765_j-25.jpg";
 
     return (

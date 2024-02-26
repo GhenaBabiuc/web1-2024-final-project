@@ -1,7 +1,12 @@
-.movie-container {
+.movie-list-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     max-width: 75%;
+    min-height: 50em;
     margin: 0 auto;
+    color: #bebbbb;
 }
 
 .movie-list {
@@ -9,36 +14,4 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-}
-
-.search-input {
-    width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border: 1px solid rgb(51, 51, 51);
-    background-color: rgb(51, 51, 51, 0.5);
-    color: #bebbbb;
-    border-radius: 8px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 3px rgba(130, 180, 255, 0.5);
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }

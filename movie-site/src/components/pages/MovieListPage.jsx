@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './MovieListPage.css';
 import axios from 'axios';
-import MovieItem from "../MovieItem";
+import ItemCardMovie from "../ItemCardMovie";
+import SearchBar from "../SearchBar";
 
 export default function MovieListPage() {
     const [movies, setMovies] = useState([]);
@@ -29,19 +30,13 @@ export default function MovieListPage() {
     }
 
     return (
-        <div className="movie-container">
-            <input
-                type="text"
-                className="search-input"
-                placeholder="Search movies for title"
-                onInput={(event) => handleInputChange(event)}
-            />
-
+        <div className="movie-list-page-container">
+            {SearchBar(handleInputChange)}
             {movies.length === 0 ? (
                 <div className="loading">Loading...</div>
             ) : (
                 <div className="movie-list">
-                    {movies.map(movie => MovieItem(movie))}
+                    {movies.map(movie => ItemCardMovie(movie))}
                 </div>
             )}
         </div>
