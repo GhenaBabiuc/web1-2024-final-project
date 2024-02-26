@@ -58,14 +58,15 @@ export default function MovieDetailPage() {
             <div className="detail-body">
                 <p className="detail-description">{movie.description}</p>
             </div>
-            <iframe
-                src={movie.trailerEmbedLink}
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                title="Trailer"
-                className="detail-trailer-iframe"
-            />
+            <div className="video-wrapper">
+                <iframe
+                    src={`${movie.trailerEmbedLink}?rel=0`}
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    title="Trailer"
+                />
+            </div>
         </div>
     );
 }
