@@ -16,7 +16,7 @@ export default function MovieListPage() {
                         title: filmSearch
                     }
                 });
-                setMovies(response.data);
+                setMovies(response.data.data);
             } catch (error) {
                 console.error('There was an error fetching the movies', error);
             }

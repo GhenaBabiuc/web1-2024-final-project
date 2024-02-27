@@ -1,19 +1,20 @@
 body {
     margin: 0;
     background-color: black;
+    font-family: 'Arial', sans-serif;
+    color: white;
 }
 
-.home-page-video-background {
+.home-page-image-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
 
-.home-page-video-background video {
+.home-page-image-background img {
     width: 100%;
     height: 100%;
 }
@@ -25,33 +26,35 @@ body {
     padding: 20px;
     max-width: 75%;
     margin: 0 auto;
-    min-height: 60em;
+    min-height: 80em;
 }
 
-.home-page-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.home-page-content {
+    text-align: center;
 }
 
-.home-page-container p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.home-page-title {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
-.content {
-    margin: 20px;
-    padding: 30px;
-    background-color: rgb(51, 51, 51, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #bebbbb;
+.home-page-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 2em;
 }
 
-.explore-btn {
-    background-color: #007bff;
-    color: #bebbbb;
+.start-watching-link {
+    display: inline-block;
     padding: 10px 20px;
-    border-radius: 5px;
+    background-color: red;
+    color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.start-watching-link:hover {
+    background-color: darkred;
 }

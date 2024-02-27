@@ -1,22 +1,24 @@
 import React from 'react';
 import './HomePage.css';
-import videoSrc from 'C:/Users/ghena/Downloads/The Shawshank Redemption.mp4';
+import background from '../../assets/movie-backgroung.png';
+import {Link} from "react-router-dom";
 
 export default function HomePage() {
     return (
         <>
-            <div className="home-page-video-background">
-                <video autoPlay muted loop>
-                    <source src={videoSrc} type="video/mp4"/>
-                    Your browser does not support the video tag.
-                </video>
+            <div className="home-page-image-background">
+                <img src={background} alt="Movie background"/>
             </div>
-
             <div className="home-page-container">
-                <div className="content">
-                    <h1>Welcome to Our Movie Library!</h1>
-                    <p>Explore a wide collection of movies and find your favorites.</p>
-                    <a href="/movies" className="explore-btn">Explore Movies</a>
+                <div className="home-page-content">
+                    <h1 className="home-page-title">The Best Streaming Experience</h1>
+                    <p className="home-page-subtitle">
+                        StreamVibe is the best streaming experience for watching your favorite movies and shows on
+                        demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including
+                        the latest blockbusters, classic movies, popular TV shows, and more.
+                        You can also create your own watchlists, so you can easily find the content you want to watch.
+                    </p>
+                    <Link className="start-watching-link" to="/movies">Start Watching Now</Link>
                 </div>
             </div>
         </>
