@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePage.css';
-import background from '../../assets/movie-backgroung.png';
+import background from '../../assets/images/movie-background.png';
 import {Link} from "react-router-dom";
 
 export default function HomePage() {
