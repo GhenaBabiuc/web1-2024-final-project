@@ -36,13 +36,13 @@ export default function MovieListPage() {
         setCurrentMovie(0);
     }, [filmSearch]);
 
-    const handleInputChange = (event) => {
-        setFilmSearch(event.target.value);
+    const handleInputChange = (value) => {
+        setFilmSearch(value);
     };
 
     return (
         <div className="movie-list-page-container">
-            {SearchBar(handleInputChange)}
+            <SearchBar handleInputChange={handleInputChange} />
             {movies.length === 0 ? (
                 <div className="loading">Loading...</div>
             ) : (
