@@ -11,9 +11,7 @@ export default function MovieDetailedInfo(movie) {
                     <p className="detail-release-year">Release Year: {new Date(movie.releaseDate).getFullYear()}</p>
                     <div className="detail-directors">
                         <strong>Directors:</strong>
-                        {movie.directors.map((director) => (
-                            <span key={director.id}> {director.name}</span>
-                        ))}
+                        {movie.directors.map((director) => director.name).join(', ')}
                     </div>
                     <p className="detail-rating">Rating: {movie.rating}</p>
                     <div className="detail-genres">
@@ -29,16 +27,13 @@ export default function MovieDetailedInfo(movie) {
                     </div>
                     <div className="detail-writers">
                         <strong>Writers:</strong>
-                        {movie.writers.map((writer) => (
-                            <span key={writer.id}> {writer.name}</span>
-                        ))}
+                        {movie.writers.map((writer) => writer.name).join(', ')}
                     </div>
                     <div className="detail-description">
                         <strong>Description:</strong> {movie.description}
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
