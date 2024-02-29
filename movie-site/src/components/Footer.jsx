@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <>
             <footer>
-                <p>Movie site. All rights reserved.</p>
+                <p>StreamVibe. All rights reserved.</p>
             </footer>
         </>
     );
