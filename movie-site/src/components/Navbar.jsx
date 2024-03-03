@@ -12,7 +12,6 @@ export default function Navbar() {
                 <img src={logo} alt="StreamVibe Logo"/>
             </Link>
             <div className="nav-items">
-                <Link to="/" className="navLink">Home</Link>
                 <Link to="/movies" className="navLink">Movies & Shows</Link>
                 <Link to="/support" className="navLink">Support</Link>
             </div>
