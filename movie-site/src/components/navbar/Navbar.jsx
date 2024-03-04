@@ -1,9 +1,9 @@
 import React from 'react';
 import './Navbar.css';
 import {Link} from 'react-router-dom';
-import logo from '../assets/images/logo.png';
-import searchIcon from '../assets/images/search-icon.png';
-import notificationIcon from '../assets/images/notification-icon.png';
+import logo from '../../assets/images/logo.png';
+import searchIcon from '../../assets/images/search-icon.png';
+import notificationIcon from '../../assets/images/notification-icon.png';
 
 export default function Navbar() {
     return (

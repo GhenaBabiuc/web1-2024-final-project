@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import MovieListPage from "./components/pages/MovieListPage";
 import MoviePage from "./components/pages/MoviePage";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
