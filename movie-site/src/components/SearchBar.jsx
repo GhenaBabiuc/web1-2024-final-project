@@ -1,11 +1,36 @@
 import React, {useEffect, useState} from "react";
 import Select from "react-select";
 import "./SearchBar.css";
+import axios from "axios";
 
-export default function SearchBar({genresOptions, sortingOptions, setFilmFilter}) {
+export default function SearchBar({setFilmFilter}) {
+    const [genresOptions, setGenres] = useState([]);
     const [searchTitle, setSearchTitle] = useState("");
     const [selectedGenres, setSelectedGenres] = useState([]);
-    const [selectedSorting, setSelectedSorting] = useState(sortingOptions[0]);
+    const [selectedSorting, setSelectedSorting] = useState({
+        value: {value: "rating", order: "desc"},
+        label: "Rating DESC"
+    });
+
+    useEffect(() => {
+        const fetchGenres = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/genres/all', {});
+                setGenres(response.data.map((genre) => ({value: genre.name, label: genre.name})));
+            } catch (error) {
+                console.error('There was an error fetching the genres', error);
+            }
+        };
+
+        fetchGenres();
+    }, []);
+
+    const sortingOptions = [
+        {value: {value: "rating", order: "desc"}, label: "Rating DESC"},
+        {value: {value: "rating", order: "asc"}, label: "Rating ASC"},
+        {value: {value: "releaseDate", order: "asc"}, label: "Release Date ASC"},
+        {value: {value: "releaseDate", order: "desc"}, label: "Release Date DESC"},
+    ];
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
