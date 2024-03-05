@@ -41,7 +41,6 @@ export default function MovieListPage() {
 
     return (
         <div className="movie-list-page-container">
-
             <SearchBar setFilmFilter={setFilmFilter}/>
 
             {movies.length === 0 ? (

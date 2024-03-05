@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import searchIcon from '../../assets/images/search-icon.png';
 import notificationIcon from '../../assets/images/notification-icon.png';
+import defaultProfileIcon from '../../assets/images/profile-user-account-icon.png';
 
 export default function Navbar() {
     return (
@@ -21,6 +22,9 @@ export default function Navbar() {
                 </button>
                 <button className="nav-icon-button">
                     <img src={notificationIcon} alt="Notifications"/>
+                </button>
+                <button className="nav-icon-button">
+                    <img src={defaultProfileIcon} alt="Profile"/>
                 </button>
             </div>
         </nav>
