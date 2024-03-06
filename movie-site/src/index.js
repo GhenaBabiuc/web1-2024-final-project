@@ -8,6 +8,7 @@ import HomePage from "./components/pages/HomePage";
 import MovieListPage from "./components/pages/MovieListPage";
 import MoviePage from "./components/pages/MoviePage";
 import Footer from "./components/footer/Footer";
+import AuthorizationForm from "./components/AuthorizationForm";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/movies" element={<MovieListPage/>}/>
                 <Route path="/movies/:id" element={<MoviePage/>}/>
+                <Route path="/Authorization" element={<AuthorizationForm/>}/>
                 <Route path="*" element={<HomePage/>}/>
             </Routes>
             <Footer/>

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import './MovieListPage.css';
-import axios from 'axios';
-import ItemCardMovie from '../ItemCardMovie';
-import SearchBar from '../SearchBar';
+import "./MovieListPage.css";
+import axios from "axios";
+import ItemCardMovie from "../ItemCardMovie";
+import SearchBar from "../SearchBar";
 import Pagination from "../Pagination";
 
 export default function MovieListPage() {

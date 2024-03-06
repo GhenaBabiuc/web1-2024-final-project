@@ -24,7 +24,9 @@ export default function Navbar() {
                     <img src={notificationIcon} alt="Notifications"/>
                 </button>
                 <button className="nav-icon-button">
-                    <img src={defaultProfileIcon} alt="Profile"/>
+                    <Link to="/Authorization" className="navbar-logo">
+                        <img src={defaultProfileIcon} alt="Profile"/>
+                    </Link>
                 </button>
             </div>
         </nav>
