@@ -2,6 +2,7 @@ import React from 'react';
 import './HomePage.css';
 import background from '../../assets/images/movie-background.png';
 import {Link} from "react-router-dom";
+import FAQComponent from "../FAQComponent";
 
 export default function HomePage() {
     return (
@@ -20,6 +21,7 @@ export default function HomePage() {
                     </p>
                     <Link className="start-watching-link" to="/movies">Start Watching Now</Link>
                 </div>
+                <FAQComponent/>
             </div>
         </>
     );
